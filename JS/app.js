@@ -142,8 +142,8 @@ function unOrderedList(a, b){
         
         let li = document.createElement('li')
         child1.appendChild(li);
-        li.textContent = timeArray[i] + '   ' + a[i];
-        child2.textContent = `Total = ${a.reduce((a,b) => a + b, 0)}`
+        li.textContent = `${timeArray[i]} : ${a[i]} : Cookies`;
+        child2.textContent = `Total = ${a.reduce((a,b) => a + b, 0)} : Cookies`
     }
     
 }
