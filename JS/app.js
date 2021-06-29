@@ -2,7 +2,7 @@
 
 
 
-let workHour = [];
+let workHour = [' ',];
 
 for (let i = 6; i < 20; i++) {
     
@@ -68,11 +68,11 @@ Location.prototype.randomCus = function(){
     
 }
 
-console.log(seattle.randomCus());
-console.log(tokyo.randomCus());
-console.log(dubai.randomCus());
-console.log(paris.randomCus());
-console.log(lima.randomCus());
+seattle.randomCus();
+tokyo.randomCus();
+dubai.randomCus();
+paris.randomCus();
+lima.randomCus();
 
 
 
@@ -99,51 +99,216 @@ console.log(lima.randomCus());
 
 
 //Dom
+let namesArray = ['Seattle', 'Tokyo', 'Dubai', 'Paris', 'Lima']
+
+
 
 const parentElm = document.getElementById('sales');
-const h2 = document.createElement('h2');
-parentElm.appendChild(h2); 
-h2.textContent = 'Sales information for each location';
+// const h2 = document.createElement('h2');
+// parentElm.appendChild(h2); 
+// h2.textContent = 'Sales information for each location';
 
-const tableElm = document.createElement('table')
+// const tableElm = document.createElement('table')
+// parentElm.appendChild(tableElm);
+// console.log(tableElm);
+
+let tableElm = document.createElement('table');
 parentElm.appendChild(tableElm);
-console.log(tableElm);
 
-let trElm = document.createElement('tr');
-tableElm.appendChild(trElm);
+let tableHead = document.createElement('thead');
+tableElm.appendChild(tableHead);
 
-let emptyTh = document.createElement('th')
-trElm.appendChild(emptyTh);
-
-let tr2Elm = document.createElement('tr')
-tableElm.appendChild(tr2Elm);
+let tableBody = document.createElement('tbody');
+tableElm.appendChild(tableBody);
 
 
+let trHead = document.createElement('tr');
+tableHead.appendChild(trHead);
 
-for (let i = 0; i < workHour.length; i++) {
+function tHead(){
+    for (let i = 0; i < workHour.length; i++) {
+        
+
+        let tdHead = document.createElement('td');
+        trHead.appendChild(tdHead)
+        tdHead.textContent = workHour[i];
+    }
     
-    let thElm = document.createElement('th');
-    trElm.appendChild(thElm);
-    thElm.textContent = workHour[i]
+    let dailyLocTotal = document.createElement('th');
+    trHead.appendChild(dailyLocTotal);
+    dailyLocTotal.textContent = 'Daily Location Total';
 }
+tHead();
 
-Location.prototype.table = function(){
 
+// function tBody(){
     
-    for (let i = 0; i < 4; i++) {
+//     for (let i = 0; i < namesArray.length; i++) {
+
+//         let trBody = document.createElement('tr');
+//         tableBody.appendChild(trBody);
         
-        let tdElm = document.createElement('td');
-        tr2Elm.appendChild(tdElm);
-        tdElm.textContent = this.name;
+//         let tdBody = document.createElement('td');
+//         trBody.appendChild(tdBody);
+//         // tdBody.textContent = namesArray[i]
+//     }
+// }
+// tBody();
+
+Location.prototype.daTa = function(){
+
+    for (let i = 0; i < this.cookiesPurch.length; i++) {
+        let tdHead = document.createElement('td');
+        trHead.appendChild(tdHead)
+        tdHead.textContent = workHour[i];
         
+        let trBody = document.createElement('tr');
+        tableBody.appendChild(trBody);
+
+        let tdBody2 = document.createElement('td');
+        trBody.appendChild(tdBody2);
+        tdBody2.textContent = namesArray[i];
+
         
+    
     }
 }
-log.console(seattle.table());
-log.console(tokyo.table());
-log.console(dubai.table());
-log.console(paris.table());
-log.console(lima.table());
+seattle.daTa();
+tokyo.daTa();
+dubai.daTa();
+paris.daTa();
+lima.daTa();
+
+
+// function tableHead(){
+
+//     for (let i = 0; i < workHour.length; i++) {
+            
+//         let th = document.createElement('th')
+//         tableElm.appendChild(th);
+//         th.textContent = workHour[i]
+        
+//     }
+//     let dailyLocTotal = document.createElement('th');
+//     tableElm.appendChild(dailyLocTotal);
+//     dailyLocTotal.textContent = 'Daily Location Total';
+
+
+// }
+// tableHead();
+
+// function tableContent() {
+//     for (let i = 0; i < namesArray.length; i++) {
+//         let tr = document.createElement('tr');
+//         tableElm.appendChild(tr);
+        
+//         let nameS = document.createElement('td')
+//         tr.appendChild(nameS);
+//         nameS.textContent = namesArray[i];
+        
+//     }
+    
+// }
+// tableContent();
+
+// Location.prototype.tableBody= function () {
+//     for (let i = 0; i < this.cookiesPurch.length; i++) {
+//         // let cookiesPurchtr = document.createElement('tr')
+//         // tableElm.appendChild(cookiesPurchtr);
+
+//         let cookiesPurchtd = document.createElement('td');
+//         tableElm.appendChild(cookiesPurchtd);
+//         cookiesPurchtd.textContent = this.cookiesPurch[i];
+        
+//     }    
+// }
+// seattle.tableBody();
+// tokyo.tableBody();
+// dubai.tableBody();
+// paris.tableBody();
+// lima.tableBody();
+
+// let trCulm;
+
+
+// for (let i = 0; i < 7; i++) {
+//     trCulm = document.createElement('tr');
+//     tableElm.appendChild(trCulm);
+
+// }
+// for (let i = 0; i < workHour.length; i++) {
+//     let td = document.createElement('td')
+//     tableElm.appendChild(td);
+//     td.textContent = workHour[i];
+    
+// }
+// for (let i = 0; i < namesArray.length; i++) {
+//     let td = document.createElement('td');
+//     trCulm.appendChild(td);
+//     td.textContent = namesArray[i];  
+// }
+
+// for (let i = 0; i < workHour.length; i++) {
+//     trCulm = document.createElement('tr');
+//     tableElm.appendChild(trCulm);
+
+//     let th = document.createElement('th');
+//     trCulm.appendChild(th);
+//     th.textContent = workHour[i];
+    
+// }
+
+
+
+// for (let i = 0; i < workHour.length; i++) {
+
+//     let thCulm = document.createElement('th');
+//     tableElm.appendChild(thCulm);
+//     thCulm.textContent = workHour[i];
+    
+//     let trElm = document.createElement('tr');
+//     tableElm.appendChild(trElm);
+//     trElm.textContent = 'Bashar';
+    
+// }
+
+
+
+
+
+
+
+
+// for (let i = 0; i < workHour.length; i++) {
+//     let trRows = document.createElement('tr');
+//     tableElm.appendChild(trRows);
+
+//     let tdElm = document.createElement('td');
+//     trRows.appendChild(tdElm);
+//     tdElm.textContent = workHour[i];
+    
+//     let thElm = document.createElement('th');
+//     trRows.appendChild(thElm); 
+// }
+
+
+// for (let i = 0; i < 7; i++) {
+//     let trRows = document.createElement('tr');
+//     tableElm.appendChild(trRows);
+  
+//     let thElm = document.createElement('th');
+//     trRows.appendChild(thElm);
+//     thElm.textContent = this.name;
+    
+// }
+
+ 
+
+
+
+
+
+
 
 // for (let i = 0; i < 7; i++) {
 
