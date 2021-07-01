@@ -1,9 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Dosis:wght@600&family=Indie+Flower&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
 
 
 *{
     box-sizing: border-box
+}
+
+body {
+    display: grid;
 }
 
 header {
@@ -12,6 +16,7 @@ header {
     position: static;
     width: 100%;
     height: 100px;
+    border-bottom: solid;
 }
 
 header h1{
@@ -21,7 +26,8 @@ header h1{
 }
 
 header nav {
-    float: right;
+    text-align: end;
+    width: 95%;
 }
 
 header nav ul li {
@@ -30,26 +36,79 @@ header nav ul li {
     font-weight: 600;
 }
 
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+img#salmon {
+    padding: 25px 478px;
+    width: 100%;
+    filter: drop-shadow(2px 4px 6px black);
+}
+
 h2{
     font-family: 'Dosis', sans-serif;
-
+    padding: 15px 25px;
+    margin: 0 0;
+    color: #e8ca94;
 
 }
 
-ul, p{
-    font-family: 'Indie Flower', cursive;
+main ul, main p{
+    font-family: 'Merienda', cursive;
+    width: 86%;
+    padding: 0 50px;
+    color: beige;
 }
 
 main {
     background-color: #007965;
-    display: inline-flex;
     
+    
+}
+
+section#sides {
+    display: inline-block;
+}
+
+.left {
+    margin: 0 0;
+    padding: 0 0;
+    width: 70%;
+    float: left;
+}
+
+.right {
+    margin: 0 0;
+    padding: 0 0;
+    width: 20%;
+    float: right;
+}
+
+h4{
+    font-family: 'Dosis', sans-serif;
+    margin: 5px 0;
+    color: #e8ca94;
+}
+
+#imgContainer {
+    max-width: 75%;
+}
+
+#imgContainer img {
+    max-width: inherit;
 }
 
 footer {
     display: inline-block;
     width: 100%;
     background-color: #F58634;
-    height: 48px;
+    height: 22px;
+}
+
+p#footer {
     text-align: center;
+    margin: 0 0;
+    padding: 2px 0;
 }
