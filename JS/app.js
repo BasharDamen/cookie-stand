@@ -185,6 +185,7 @@ function makeFooter(){
     finalTd.textContent = totalOfTotals
     
 }
+makeFooter();
 
 
 const salesForm = document.getElementById("SalesForm");
@@ -208,13 +209,16 @@ function handleSubmit(event){
     console.log(avgCookiesField);
 
     const newLocation = new Location(nameField, minCustField ,maxCusField, avgCookiesField);
-
     
-
+    let deleter = tableElement.rows.length -1;
+    tableElement.deleteRow(deleter);
+    
+    
     newLocation.calCustomersEachHour();
     newLocation.calcCookiesEachHour();
     newLocation.render();
-  makeFooter();
+    
+    makeFooter();
 }
 
 
