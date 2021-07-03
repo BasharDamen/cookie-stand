@@ -21,7 +21,7 @@ for (let i = 6; i < 20; i++) {
     
 }
 
-console.log(workHour);
+// console.log(workHour);
 
 // global function
 function random(min, max) {
@@ -90,14 +90,13 @@ console.log(paris);
 let lima = new Location('Lima', 2, 16, 4.6)
 console.log(lima);
 
-console.log(locationsArray);
 
 
 
 
 // rendering function for result div
 let parent = document.getElementById('sales');
-console.log(parent);
+
 
 let tableElement = document.createElement('table');
 parent.appendChild(tableElement)
@@ -124,6 +123,8 @@ function makeHeader(){
 }
 makeHeader();
 
+
+
 // prototype function
 
 Location.prototype.render = function(){
@@ -133,26 +134,24 @@ Location.prototype.render = function(){
     let nameData = document.createElement('td');
     dataRow.appendChild(nameData)
     nameData.textContent = this.name;
-
+    
     for (let i = 0; i < workHour.length; i++) {
         let tdElement = document.createElement('td');
         dataRow.appendChild(tdElement);
         tdElement.textContent = this.cookiesEachHour[i]
     }
-
+    
     let totalDailyEachLocation = document.createElement('td');
     dataRow.appendChild(totalDailyEachLocation);
     totalDailyEachLocation.textContent = this.totalCookiesPerDay;
+    
 }
-
-
 
 // calling loop
 for (let i = 0; i < locationsArray.length; i++) {
     locationsArray[i].calCustomersEachHour();
     locationsArray[i].calcCookiesEachHour();
     locationsArray[i].render();
-    
 }
 
 function makeFooter(){
@@ -165,24 +164,62 @@ function makeFooter(){
 
     let totalOfTotals = 0;
     for (let i = 0; i < workHour.length; i++) {
-        let totalEachHour = 0
-
+        let totalEachHour = 0;
+        
         for (let j = 0; j < locationsArray.length; j++) {
+            totalEachHour += locationsArray[j].cookiesEachHour[i];
             
-            totalEachHour += locationsArray[j].cookiesEachHour[j];
         }
-        totalOfTotals += totalEachHour;
+
         let footerData = document.createElement('td');
         footerRow.appendChild(footerData);
         footerData.textContent = totalEachHour
-
-
+        
+        
+        totalOfTotals += totalEachHour;
     }
+    
 
     let finalTd = document.createElement('td');
     footerRow.appendChild(finalTd);
     finalTd.textContent = totalOfTotals
-
+    
 }
-makeFooter();
+
+
+const salesForm = document.getElementById("SalesForm");
+
+salesForm.addEventListener('submit' , handleSubmit);
+
+
+function handleSubmit(event){
+    event.preventDefault();
+
+    const nameField = event.target.nameField.value;
+    console.log(nameField);
+
+    const maxCusField = event.target.maxCusField.value;
+    console.log(maxCusField);
+
+    const minCustField = event.target.minCustField.value;
+    console.log(minCustField);
+
+    const avgCookiesField = event.target.avgCookiesField.value;
+    console.log(avgCookiesField);
+
+    const newLocation = new Location(nameField, minCustField ,maxCusField, avgCookiesField);
+
+    
+
+    newLocation.calCustomersEachHour();
+    newLocation.calcCookiesEachHour();
+    newLocation.render();
+  makeFooter();
+}
+
+
+
+
+
+
 
