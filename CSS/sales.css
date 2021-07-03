@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 *{
     box-sizing: border-box;
 }
@@ -18,9 +22,10 @@ header {
 }
 
 header h1{
-    font-family: 'Anton', sans-serif;
+    font-family: 'Lobster', cursive;
     float: left;
     padding: 0 37px;
+    text-transform: capitalize;
 }
 
 header nav {
@@ -62,12 +67,17 @@ table {
     border-collapse: collapse;
     width: 90%;
     margin: 0 auto;
+    background-color: oldlace;
 }
 
 td, th, tr{
       border: 2px solid #000000;
 }
 
+td{
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
 
 footer {
     display: inline-block;
@@ -80,4 +90,15 @@ p#footer {
     text-align: center;
     margin: 0 0;
     padding: 2px 0;
+}
+
+fieldset {
+    display: flex;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-weight: 700;
+    color: wheat;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 13px 0
 }
